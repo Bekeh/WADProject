@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class table="users" name="pojos.User" catalog="hostel_management">
+    
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="increment" />
+        </id>
+        
+        <property name="fullName" type="java.lang.String">
+            <column name="name" length="100" not-null="true" />
+        </property>
+        
+        <property name="username" type="java.lang.String">
+            <column name="username" length="40" not-null="true" unique="true" />
+        </property>
+        
+        <property name="password" type="java.lang.String">
+            <column name="password" length="255" not-null="true" />
+        </property>
+    
+        <property name="email" type="java.lang.String"> 
+            <column name="email" length="100" not-null="true" />
+        </property>
+        
+        <property name="role" type="java.lang.String"> 
+            <column name="role" length="100" not-null="true" />
+        </property>
+        
+        <property name="gender" type="java.lang.String">
+            <column name="gender" length="1" />
+        </property>
+    
+        <property name="telephone" type="java.lang.String">
+            <column name="telephone" length="14" />
+        </property>
+        
+        <property name="cnp" type="java.lang.String">
+            <column name="cnp" length="13" />
+        </property>
+        
+        <property name="university" type="java.lang.String">
+            <column name="university" length="100" />
+        </property>
+        
+        <property name="yearOfStudy" type="java.lang.Short">
+            <column name="yearOfStudy"/>
+        </property>
+        
+        <property name="dateOfBirth" type="java.util.Date">
+            <column name="DateOfBirth"/>
+        </property>
+             
+    </class>
+</hibernate-mapping>
