@@ -49,7 +49,8 @@ Contributor(s):
     <property name="hibernate.current_session_context_class">thread</property>
     <property name="hibernate.query.factory_class">org.hibernate.hql.internal.classic.ClassicQueryTranslatorFactory</property>
     <property name="hibernate.show_sql">true</property>
-    <property name="hibernate.hbm2ddl.auto">create-drop</property>
+    <property name="hibernate.hbm2ddl.auto">update</property>
     <mapping resource="resources/User.hbm.xml"/>
+    <mapping resource="resources/Room.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>

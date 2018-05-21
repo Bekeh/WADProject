@@ -5,7 +5,14 @@
  */
 package controllers;
 
+import dao.RoomDAO;
 import dao.UserDAO;
+import java.util.ArrayList;
+import java.util.List;
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+import pojos.Room;
 import pojos.User;
 import utils.HibernateConnector;
 
@@ -20,9 +27,13 @@ public class NewMain {
      */
     public static void main(String[] args) {
         
-        User u = new User("Nae Alexandru","naealexg@gmail.com", "parola", "naealexg@gmail.com");
-        System.out.println(UserDAO.registerUser(u));
-        //System.out.println(HibernateConnector.getInstance().getSession());
+       
+       RoomDAO.addStudent();
+
+        
+       
+        
+            
     }
     
 }

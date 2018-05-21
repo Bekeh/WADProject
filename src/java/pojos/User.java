@@ -28,6 +28,8 @@ public class User implements java.io.Serializable{
     private String studentId;
     private Short yearOfStudy;
     private Date dateOfBirth;
+    private boolean completeProfile;
+    private Room room;
 
     public User() {
     }
@@ -40,6 +42,7 @@ public class User implements java.io.Serializable{
         this.password = password;
         this.email = email;
         this.role = "STUDENT";
+        this.completeProfile = false;
     }
     
     //to be used when creating ADMINS
@@ -50,9 +53,24 @@ public class User implements java.io.Serializable{
         this.email = email;
         this.role = role;
     }
-    
-    
 
+    public Room getRoom() {
+        return room;
+    }
+
+    public void setRoom(Room room) {
+        this.room = room;
+    }
+
+    
+    public boolean isCompleteProfile() {
+        return completeProfile;
+    }
+
+    public void setCompleteProfile(boolean completeProfile) {
+        this.completeProfile = completeProfile;
+    }
+    
     public Integer getId() {
         return id;
     }
@@ -156,6 +174,13 @@ public class User implements java.io.Serializable{
     public void setDateOfBirth(Date dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
+
+    @Override
+    public String toString() {
+        return "User{" + "id=" + id + ", fullName=" + fullName + ", username=" + username + ", password=" + password + ", email=" + email + ", role=" + role + ", gender=" + gender + ", telephone=" + telephone + ", cnp=" + cnp + ", university=" + university + ", studentId=" + studentId + ", yearOfStudy=" + yearOfStudy + ", dateOfBirth=" + dateOfBirth + ", completeProfile=" + completeProfile + '}';
+    }
+    
+    
     
     
 }

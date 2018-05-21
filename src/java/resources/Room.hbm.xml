@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="pojos.Room" table="rooms" catalog="hostel_management">
+  
+    <id name="id" type="java.lang.Integer">
+        <column name="id" />
+        <generator class="increment" />
+    </id>
+        
+    <property name="size" type="java.lang.Integer">
+        <column name="size" not-null="true"/>
+    </property>
+        
+    <property name="roomNumber" type="java.lang.Integer">
+        <column name="roomnumber" not-null="true" unique="true"/>
+    </property>
+        
+    <property name="roomType" type="java.lang.String">
+        <column name="roomtype" length="45"/>
+    </property>
+    
+    <property name="isFull" type="boolean"> 
+        <column name="isFull" default="false"/>
+    </property>
+    
+    <list name="students" table="users" inverse="true" cascade="save-update">
+        <key column="ROOM_ID" />
+        <list-index column="STUDENT_NO" base="1"/>
+        <one-to-many class="pojos.User"/>
+    </list>
+    
+</class>
+</hibernate-mapping>

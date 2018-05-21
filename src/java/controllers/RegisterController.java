@@ -61,9 +61,9 @@ public class RegisterController extends HttpServlet {
             request.setAttribute("errors", "User exists!");
             request.getRequestDispatcher("/views/registeration.jsp").forward(request, response);
         } else {
-            User user = UserDAO.registerUser(u);
-            if (user.getId() != null){
-                request.getSession().setAttribute("USER", user);
+            //User user = UserDAO.registerUser(u);
+            if (UserDAO.registerUser(u) != 0){
+                request.getSession().setAttribute("USER", u);
                 response.sendRedirect("home");
             } else {
                 request.setAttribute("errors", "There was a problem with registering");
